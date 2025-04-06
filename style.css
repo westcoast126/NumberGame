@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%; /* Responsive width */
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+#guess-form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center;
+    gap: 1rem; /* Spacing between form elements */
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Add space below label */
+    display: block; /* Ensure label is on its own line */
+}
+
+input[type="number"] {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+    width: 80px; /* Fixed width for number input */
+    box-sizing: border-box;
+}
+
+/* Hide spinner buttons on number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Feedback Styles */
+.feedback {
+    margin-top: 1.5rem;
+    min-height: 60px; /* Reserve space for messages */
+}
+
+#message {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem; /* Space between message and attempts */
+}
+
+#message.correct {
+    color: #2ecc71; /* Green for correct */
+}
+
+#message.error {
+    color: #e74c3c; /* Red for too high/low/invalid */
+}
+
+#play-again-button {
+    margin-top: 1rem;
+    background-color: #1abc9c;
+}
+
+#play-again-button:hover {
+    background-color: #16a085;
+}
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+    #guess-form {
+        flex-direction: row; /* Align elements horizontally on larger screens */
+        justify-content: center;
+    }
+    label {
+        margin-bottom: 0; /* Remove bottom margin when horizontal */
+    }
+} 
